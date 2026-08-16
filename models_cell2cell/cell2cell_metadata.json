@@ -1,0 +1,85 @@
+{
+  "dataset": "Cell2Cell (independent external telecom dataset)",
+  "note": "This model is trained and evaluated ENTIRELY on Cell2Cell's own labeled data (cell2celltrain.csv, 80/20 split). It does not validate the IBM Telco model, because the two datasets have incompatible feature schemas. It demonstrates the same interpretable decision-tree methodology on an independent telecom dataset.",
+  "rows_used": 50890,
+  "features_used": [
+    "MonthsInService",
+    "MonthlyRevenue",
+    "TotalRecurringCharge",
+    "OverageMinutes",
+    "DroppedCalls",
+    "CustomerCareCalls",
+    "RetentionCalls",
+    "CurrentEquipmentDays",
+    "Handsets",
+    "CreditRating",
+    "Homeownership",
+    "MaritalStatus",
+    "Occupation",
+    "PrizmCode"
+  ],
+  "selected_max_depth": 3,
+  "depth_search_f1_scores": {
+    "3": 0.47633262260127934,
+    "4": 0.4734018775145284,
+    "5": 0.47419712070874864
+  },
+  "accuracy": 0.5173904499901749,
+  "precision": 0.3462492250464972,
+  "recall": 0.7629781420765027,
+  "f1_score": 0.47633262260127934,
+  "roc_auc": 0.6194767524024873,
+  "confusion_matrix": [
+    [
+      3032,
+      4218
+    ],
+    [
+      694,
+      2234
+    ]
+  ],
+  "roc_curve": {
+    "fpr": [
+      0.0,
+      0.011310344827586206,
+      0.06855172413793104,
+      0.09337931034482759,
+      0.15627586206896552,
+      0.5817931034482758,
+      0.6222068965517241,
+      0.8075862068965517,
+      1.0
+    ],
+    "tpr": [
+      0.0,
+      0.020150273224043717,
+      0.13797814207650272,
+      0.1864754098360656,
+      0.2766393442622951,
+      0.7629781420765027,
+      0.7950819672131147,
+      0.9193989071038251,
+      1.0
+    ]
+  },
+  "holdout_rows": 20000,
+  "holdout_churn_missing": true,
+  "holdout_used_for_metrics": false,
+  "feature_importance": {
+    "CurrentEquipmentDays": 0.5955016978547588,
+    "MonthsInService": 0.3074688063148888,
+    "TotalRecurringCharge": 0.059341034005198245,
+    "RetentionCalls": 0.03768846182515403,
+    "MonthlyRevenue": 0.0,
+    "OverageMinutes": 0.0,
+    "CustomerCareCalls": 0.0,
+    "DroppedCalls": 0.0,
+    "Handsets": 0.0,
+    "CreditRating": 0.0,
+    "Homeownership": 0.0,
+    "MaritalStatus": 0.0,
+    "Occupation": 0.0,
+    "PrizmCode": 0.0
+  }
+}

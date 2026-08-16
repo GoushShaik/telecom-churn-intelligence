@@ -1,0 +1,109 @@
+{
+  "tree_feature_columns": [
+    "Gender",
+    "Senior Citizen",
+    "Partner",
+    "Dependents",
+    "Tenure Months",
+    "Phone Service",
+    "Multiple Lines",
+    "Internet Service",
+    "Online Security",
+    "Online Backup",
+    "Device Protection",
+    "Tech Support",
+    "Streaming TV",
+    "Streaming Movies",
+    "Contract",
+    "Paperless Billing",
+    "Payment Method",
+    "Monthly Charges",
+    "Total Charges"
+  ],
+  "cluster_feature_columns": [
+    "Tenure Months",
+    "Monthly Charges",
+    "Total Charges",
+    "Contract",
+    "Internet Service",
+    "Service Count"
+  ],
+  "selected_tree_depth": 5,
+  "selected_k": 3,
+  "personas": {
+    "0": {
+      "name": "Budget & Basic",
+      "description": "Lower monthly spend, fewer bundled services \u2014 price-sensitive segment.",
+      "size": 1526,
+      "avg_tenure_months": 30.5,
+      "avg_monthly_charges": 21.08,
+      "avg_service_count": 1.22,
+      "most_common_contract": "Two year",
+      "churn_rate": 0.074
+    },
+    "1": {
+      "name": "Loyal & Stable",
+      "description": "Long-tenured customers with low churn \u2014 the most stable, low-risk segment.",
+      "size": 2161,
+      "avg_tenure_months": 58.7,
+      "avg_monthly_charges": 89.13,
+      "avg_service_count": 6.6,
+      "most_common_contract": "Two year",
+      "churn_rate": 0.136
+    },
+    "2": {
+      "name": "New & At-Risk",
+      "description": "Recently joined customers with a high cancellation rate \u2014 the highest-priority retention group.",
+      "size": 3356,
+      "avg_tenure_months": 16.3,
+      "avg_monthly_charges": 68.94,
+      "avg_service_count": 3.9,
+      "most_common_contract": "Month-to-month",
+      "churn_rate": 0.436
+    }
+  },
+  "readable_rules": [
+    "IF Contract > 0.50 AND Dependents > 0.50 -> churn probability = 0.0% (covers 793 customers in training data)",
+    "IF Contract <= 0.50 AND Dependents <= 0.50 AND Online Security <= 0.50 AND Internet Service > 0.50 AND Tenure Months <= 14.50 -> churn probability = 89.2% (covers 663 customers in training data)",
+    "IF Contract <= 0.50 AND Dependents <= 0.50 AND Online Security <= 0.50 AND Internet Service > 0.50 AND Tenure Months > 14.50 -> churn probability = 73.5% (covers 623 customers in training data)",
+    "IF Contract > 0.50 AND Dependents <= 0.50 AND Monthly Charges <= 93.67 AND Online Security > 0.50 AND Contract > 1.50 -> churn probability = 5.4% (covers 548 customers in training data)",
+    "IF Contract <= 0.50 AND Dependents <= 0.50 AND Online Security > 0.50 AND Monthly Charges <= 91.42 AND Tenure Months > 1.50 -> churn probability = 42.8% (covers 499 customers in training data)"
+  ],
+  "feature_importance": {
+    "Contract": 0.5787557511021653,
+    "Dependents": 0.1353394117805793,
+    "Online Security": 0.07794525438888483,
+    "Monthly Charges": 0.0615588174399525,
+    "Tenure Months": 0.05622885345841032,
+    "Total Charges": 0.04811682344730588,
+    "Internet Service": 0.02598820025165758,
+    "Partner": 0.006995325539194746,
+    "Payment Method": 0.00568154966637794,
+    "Online Backup": 0.0033900129254718072,
+    "Gender": 0.0,
+    "Senior Citizen": 0.0,
+    "Device Protection": 0.0,
+    "Phone Service": 0.0,
+    "Multiple Lines": 0.0,
+    "Streaming Movies": 0.0,
+    "Streaming TV": 0.0,
+    "Tech Support": 0.0,
+    "Paperless Billing": 0.0
+  },
+  "tree_metrics": {
+    "accuracy": 0.7636621717530163,
+    "precision": 0.5383177570093458,
+    "recall": 0.7700534759358288,
+    "f1_score": 0.6336633663366337,
+    "confusion_matrix": [
+      [
+        788,
+        247
+      ],
+      [
+        86,
+        288
+      ]
+    ]
+  }
+}

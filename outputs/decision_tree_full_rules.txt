@@ -1,0 +1,75 @@
+=== FULL DECISION TREE (text form) ===
+
+|--- Contract <= 0.50
+|   |--- Dependents <= 0.50
+|   |   |--- Online Security <= 0.50
+|   |   |   |--- Internet Service <= 0.50
+|   |   |   |   |--- Total Charges <= 353.72
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- Total Charges >  353.72
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- Internet Service >  0.50
+|   |   |   |   |--- Tenure Months <= 14.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- Tenure Months >  14.50
+|   |   |   |   |   |--- class: 1
+|   |   |--- Online Security >  0.50
+|   |   |   |--- Monthly Charges <= 91.42
+|   |   |   |   |--- Tenure Months <= 1.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- Tenure Months >  1.50
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- Monthly Charges >  91.42
+|   |   |   |   |--- Total Charges <= 2902.00
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- Total Charges >  2902.00
+|   |   |   |   |   |--- class: 1
+|   |--- Dependents >  0.50
+|   |   |--- Tenure Months <= 6.50
+|   |   |   |--- Online Backup <= 0.50
+|   |   |   |   |--- Total Charges <= 278.95
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- Total Charges >  278.95
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- Online Backup >  0.50
+|   |   |   |   |--- Total Charges <= 320.57
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Total Charges >  320.57
+|   |   |   |   |   |--- class: 1
+|   |   |--- Tenure Months >  6.50
+|   |   |   |--- Partner <= 0.50
+|   |   |   |   |--- Monthly Charges <= 94.85
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Monthly Charges >  94.85
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- Partner >  0.50
+|   |   |   |   |--- Total Charges <= 1596.92
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Total Charges >  1596.92
+|   |   |   |   |   |--- class: 0
+|--- Contract >  0.50
+|   |--- Dependents <= 0.50
+|   |   |--- Monthly Charges <= 93.67
+|   |   |   |--- Online Security <= 0.50
+|   |   |   |   |--- Payment Method <= 1.50
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Payment Method >  1.50
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- Online Security >  0.50
+|   |   |   |   |--- Contract <= 1.50
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Contract >  1.50
+|   |   |   |   |   |--- class: 0
+|   |   |--- Monthly Charges >  93.67
+|   |   |   |--- Tenure Months <= 70.50
+|   |   |   |   |--- Monthly Charges <= 102.25
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Monthly Charges >  102.25
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- Tenure Months >  70.50
+|   |   |   |   |--- Total Charges <= 8639.60
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Total Charges >  8639.60
+|   |   |   |   |   |--- class: 1
+|   |--- Dependents >  0.50
+|   |   |--- class: 0
